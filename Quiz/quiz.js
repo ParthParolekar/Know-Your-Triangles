@@ -4,7 +4,7 @@ const displayScore = document.querySelector(".score");
 
 const questions = [
   {
-    question: "A trianle's angles add upto 180 degrees.",
+    question: "A triangle's angles add upto 180 degrees.",
     questionNumber: "Q1",
     option1: "True",
     option2: "False",
@@ -32,7 +32,7 @@ const questions = [
   },
   {
     question:
-      "A trianle with all three equal sides is called an equilateral triangle",
+      "A triangle with all three equal sides is called an equilateral triangle",
     questionNumber: "Q4",
     option1: "True",
     option2: "False",
