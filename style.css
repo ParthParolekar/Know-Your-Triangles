@@ -155,7 +155,7 @@ body {
 }
 
 .img {
-  padding-top: 20vh;
+  padding-top: 10vh;
 }
 
 .number-input {
@@ -200,3 +200,20 @@ body {
 }
 
 /* Angles  End*/
+
+/* Area Start */
+.area-form {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.result-area {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 20px;
+  padding: 0.2rem 0.4rem;
+}
+/* Area End */

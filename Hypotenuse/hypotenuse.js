@@ -1,6 +1,6 @@
 const userInput = document.querySelectorAll(".number-input");
 const form = document.querySelector(".hypotenuse-form");
-const result = document.querySelector(".result");
+const result = document.querySelector(".result-hypotenuse");
 
 form.addEventListener("submit", calculateHypotenuse);
 
