@@ -1,80 +1,109 @@
 const submitBtn = document.querySelector(".submit-btn");
-let checked = document.querySelectorAll(".question1");
-let quiz = document.querySelector(".quiz");
-const correctOption = 1;
+const quiz = document.querySelector(".quiz");
+const displayScore = document.querySelector(".score");
 
 const questions = [
   {
-    question:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, iddd?",
-    option1: "option 1",
-    option2: "option 2",
-    correctOption: "1",
-    class: "question1",
+    question: "A trianle's angles add upto 180 degrees.",
+    questionNumber: "Q1",
+    option1: "True",
+    option2: "False",
+    correctOption: 1,
+    wrongOption: 2,
+    className: "question1",
   },
   {
-    question:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, id?ds",
-    option1: "option 1",
-    option2: "option 2",
-    correctOption: "2",
+    question: "There can be 2 right angles in a triangle.",
+    questionNumber: "Q2",
+    option1: "True",
+    option2: "Flase",
+    correctOption: 2,
+    wrongOption: 1,
     className: "question2",
   },
   {
-    question:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,",
-    option1: "option 1",
-    option2: "option 2",
-    correctOption: "1",
+    question: "Can A triangle have 2 obtuse angles?",
+    questionNumber: "Q3",
+    option1: "No",
+    option2: "Yes",
+    correctOption: 1,
+    wrongOption: 2,
     className: "question3",
   },
   {
     question:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ?",
-    option1: "option 1",
-    option2: "option 2",
-    correctOption: "2",
+      "A trianle with all three equal sides is called an equilateral triangle",
+    questionNumber: "Q4",
+    option1: "True",
+    option2: "False",
+    correctOption: 1,
+    wrongOption: 2,
     className: "question4",
   },
   {
-    question:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, i?",
-    option1: "option 1",
-    option2: "option 2",
-    correctOption: "2",
+    question: "An equilateral triangle has three acute angles",
+    questionNumber: "Q5",
+    option1: "Flase",
+    option2: "True",
+    correctOption: 2,
+    wrongOption: 1,
     className: "question5",
   },
 ];
 
 //display all qustions
 function displayQuestions() {
-  const questionAndAnswers = questions.map((q) => {
-    return `<div class="q-and-a">
-
+  const questionAndAnswers = questions
+    .map((q) => {
+      return `<div class="q-and-a ${q.questionNumber}">
     <div class="question">
-        ${q.question}
+        ${q.questionNumber}) ${q.question}
     </div>
 
     <div class="mcq">
-        <input type="radio" name=${q.className} id="" class=${q.className}>${q.option1}</input>
-        <input type="radio" name=${q.className} id="" class=${q.className}>${q.option2}</input>
+        <input type="radio" name=${q.className} id="" class="${q.className}">${q.option1}</input>
+        <input type="radio" name=${q.className} id="" class="${q.className}">${q.option2}</input>
     </div>
   
   </div>`;
-  });
+    })
+    .join("");
 
   quiz.innerHTML = questionAndAnswers;
 }
 
 submitBtn.addEventListener("click", submit);
 
+displayQuestions();
+
+//calculate score
 function submit() {
-  console.log(checked);
-  if (checked[correctOption].checked === true) {
-    console.log("true");
-  } else if (checked[correctOption].checked === false) {
-    console.log("flase");
+  let score = 0;
+  for (i = 0; i < questions.length; i++) {
+    // console.log("checked");
+
+    let allOptions = document.querySelectorAll(`.question${i + 1}`);
+    // console.log(allOptions[questions[i].correctOption - 1].checked);
+
+    if (allOptions[questions[i].correctOption - 1].checked === true) {
+      score += 2;
+      let green = document.querySelector(`.Q${i + 1}`);
+      green.style.background = "lightgreen";
+    } else if (allOptions[questions[i].wrongOption - 1].checked === true) {
+      let red = document.querySelector(`.Q${i + 1}`);
+      score--;
+      red.style.background = "pink";
+    } else {
+      score = score;
+    }
+  }
+
+  displayScore.innerText = `Score:  ${score}`;
+  if (score > 0) {
+    displayScore.style.color = "green";
+    displayScore.style.border = "1px solid green";
+  } else if (score < 0) {
+    displayScore.style.color = "red";
+    displayScore.style.border = "1px solid red";
   }
 }
-
-displayQuestions();
