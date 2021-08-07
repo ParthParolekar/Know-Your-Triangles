@@ -145,3 +145,40 @@ body {
   border: 1px solid var(--secondary);
   border-radius: 4px;
 }
+/* Quiz End */
+
+/* Hypotenuse Start */
+.hyp-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  padding-top: 20vh;
+}
+
+.number-input {
+  padding: 0.3rem;
+}
+
+.hypotenuse-form {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.result {
+  width: 10rem;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 20px;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+}
+
+/* Hypotenuse End */
