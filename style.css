@@ -24,7 +24,6 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-  position: fixed;
   box-shadow: 0px -4px 20px var(--secondary);
 }
 
@@ -171,7 +170,7 @@ body {
   align-items: center;
 }
 
-.result {
+.result-hypotenuse {
   width: 10rem;
   text-align: center;
   font-size: 1.5rem;
@@ -182,3 +181,22 @@ body {
 }
 
 /* Hypotenuse End */
+
+/* Angles  Start*/
+
+.result-angles {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 20px;
+  padding: 0.2rem 0.4rem;
+}
+
+.angles-form {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Angles  End*/
