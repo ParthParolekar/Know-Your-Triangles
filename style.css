@@ -257,6 +257,12 @@ body {
     width: 100px;
     font-size: 0.9rem;
   }
+
+  .square:hover {
+    background: var(--secondary);
+    color: var(--primary);
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 460px) {
@@ -273,5 +279,11 @@ body {
   .q-and-a {
     max-width: 200px;
     min-height: 120px;
+  }
+
+  .square:hover {
+    background: var(--secondary);
+    color: var(--primary);
+    font-size: 1rem;
   }
 }
