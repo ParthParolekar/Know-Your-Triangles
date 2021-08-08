@@ -8,7 +8,7 @@
 :root {
   --primary: white;
   --secondary: rgb(22, 22, 22);
-  --ternary: rgb(248, 246, 246);
+  --ternary: rgb(228, 228, 228);
 }
 
 body {
@@ -92,6 +92,7 @@ body {
   height: 1px;
   border-radius: 50px;
 }
+
 /* ScrollBar */
 
 /* Quiz Start*/
@@ -165,6 +166,7 @@ body {
   border: 1px solid var(--secondary);
   border-radius: 4px;
 }
+
 /* Quiz End */
 
 /* Hypotenuse Start */
@@ -238,3 +240,38 @@ body {
   padding: 0.2rem 0.4rem;
 }
 /* Area End */
+
+@media screen and (max-width: 660px) {
+  .q-and-a {
+    max-width: 400px;
+    min-height: 100px;
+  }
+  .options {
+    max-width: 400px;
+    min-height: 100px;
+  }
+
+  .square {
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .options {
+    max-width: 200px;
+  }
+
+  .square {
+    height: 100px;
+    width: 100px;
+    font-size: 0.9rem;
+  }
+
+  .q-and-a {
+    max-width: 200px;
+    min-height: 120px;
+  }
+}
